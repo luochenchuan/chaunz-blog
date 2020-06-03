@@ -8,6 +8,9 @@ import router from './router'
 import ElementUi from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+// 布局的样式
+import 'element-ui/lib/theme-chalk/display.css'
+
 Vue.config.productionTip = false
 Vue.use(ElementUi)
 
