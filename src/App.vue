@@ -3,7 +3,7 @@
     <!--<img src="./assets/logo.png">-->
     <el-row>
       <el-col :span="24" class="nav">
-          导航
+          <MyNav :menuList="menuList"/>
       </el-col>
     </el-row>
     <el-row>
@@ -22,8 +22,23 @@
 </template>
 
 <script>
+import MyNav from './components/nav/MyNav'
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      menuList: [
+        {'id': 1, 'title': '首页', 'path': '/'},
+        {'id': 2, 'title': '标签', 'path': '/'},
+        {'id': 3, 'title': '分类', 'path': '/'},
+        {'id': 4, 'title': '搜索', 'path': '/'},
+        {'id': 5, 'title': '留言', 'path': '/'}
+      ]
+    }
+  },
+  components: {
+    MyNav: MyNav
+  }
 }
 </script>
 
@@ -34,20 +49,17 @@ body{
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: white;
   margin: 0;
   padding: 0;
   background: url("./assets/background/bg-2.jpg") no-repeat 0;
   -webkit-background-size: cover;
   background-size: cover;
-  /*-webkit-font-smoothing: antialiased;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  /*text-align: center;*/
-  /*color: #2c3e50;*/
-  /*margin-top: 60px;*/
 }
 .nav{
-  height: 80px;
+  /*height: 80px;*/
   background: rgba(208,208,208, 0.5);
 }
 .main-left{
